@@ -1,0 +1,70 @@
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+.loading {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.load_box {
+    padding: 24px 32px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_elem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+}
+
+.loading_elem::before,
+.loading_elem::after,
+.loading_elem span {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    animation: pulse 1.4s infinite ease-in-out both;
+}
+
+.loading_elem::before {
+    animation-delay: -0.32s;
+}
+
+.loading_elem span {
+    animation-delay: -0.16s;
+}
+
+@keyframes pulse {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.4;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
