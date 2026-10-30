@@ -5,7 +5,7 @@ function onScrollAnim() {
           var height = box[a].getBoundingClientRect().height;
           if (y <= height) {
                box[a].classList.add(`box-anim`)
-               var al = box[a].getAttribute(`vsyoOk`)
+               var al = box[a].getAttribute(`data-vsyo-ok`)
                if (al == `box7`) {
                     var elem1 = box[a].querySelector(`.anim7-1`)
                     var elem2 = box[a].querySelector(`.anim7-2`)
@@ -20,7 +20,7 @@ function onScrollAnim() {
                     if (classElem[classElem.length - 1] == `box-anim`) {
                          box[a].classList.remove(`box-anim`)
                     }
-                    var al1 = box[a].getAttribute(`vsyoOk`)
+                    var al1 = box[a].getAttribute(`data-vsyo-ok`)
                     if (al1 == `box7`) {
                          var elem1 = box[a].querySelector(`.anim7-1`)
                          var elem2 = box[a].querySelector(`.anim7-2`)
